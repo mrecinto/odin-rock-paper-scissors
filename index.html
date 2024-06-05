@@ -2,36 +2,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin Rock Paper Scissors</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- <script src="js/app.js"></script> -->
     <header>
         <h1>ROCK PAPER SCISSORS</h1>
     </header>
 
+    
+
     <div class="results-container">
         <div class="outcome-text">
-            <div class="outcome-title">
-                YOU WON!
-            </div>
-            <div class="outcome-subtitle">
-                Paper beats rock
-            </div>
+            <h2 class="outcome-title">
+                Choose your weapon!
+            </h2>
+            <h3 class="outcome-subtitle">
+                First to 5 wins the game
+            </h3>
+            
         </div>
     </div>
+    
     <div class="results-icons-container">
-        <div class="player-choice">✋</div>
-        <div class="computer-choice">✊</div>
+        <div class="player-choice">❔</div>
+        <div class="computer-choice">❔</div>
     </div>
     <div class="scores-container">
-        <div class="player-score">Player: 1</div>
-        <div class="computer-score">Computer: 2</div>
+        <div class="player-score">Player: 0</div>
+        <div class="computer-score">Computer: 0</div>
     </div>
 
     <div class="choices">
-
+        <button type="" id="rockBtn">✊</button>
+        <button type="" id ="paperBtn">✋</button>
+        <button type=""id="scissorsBtn">✌️</button>
     </div>
+
+    <script src="js/app.js"></script>
+    <footer>
+        made by <a href="https://github.com/matiyus" target="_blank">matiyus</a>
+    </footer>
 </body>
 </html>
