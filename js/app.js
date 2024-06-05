@@ -21,11 +21,25 @@ const computerChoice = document.querySelector('.computer-choice')
 const computerScoreText = document.querySelector('.computer-score')
 const playerScoreText = document.querySelector('.player-score')
 
+const closeModalButton = document.getElementById('close-modal');
+const modalContainer = document.getElementById('modalContainer');
+const modalText = document.getElementById('modalText')
+window.addEventListener('click',function(event){
 
+    if(event.target == modalContainer){
+        modalContainer.style.display = 'none';
+    }
+
+})
 
 rockBtn.addEventListener('click',() => handleClick(0))
 paperBtn.addEventListener('click',() => handleClick(1))
 scissorsBtn.addEventListener('click',() => handleClick(2))
+
+closeModalButton.addEventListener('click',()=> {
+    modalContainer.style.display = 'none'
+    resetData()
+})
 
 
 function isGameOver(){
@@ -46,17 +60,30 @@ function resetData(){
 
 }
 
+function openModal(){
+    modalContainer.style.display = 'flex';
+    if(playerScore > computerScore){
+        modalText.textContent = 'You win!'
+    } else{
+        modalText.textContent = 'You lost..'
+    }
+
+}
+
 
 function handleClick(playerSelection){
 
     if(isGameOver()){
+        openModal()
         return
     }
     playRound(playerSelection,getComputerSelection())
     if(isGameOver()){
-        resetData()
+        openModal()
         return
     }
+    
+    
 }
 
 
