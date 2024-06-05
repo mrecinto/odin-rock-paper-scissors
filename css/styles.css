@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #26303e;
+}
+
+header {
+    background-color: #1f2937;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.results-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: vertical;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    color: white;
+    /* padding:10px; */
+    /* border:1px solid white; */
+    font-weight: bold;
+}
+.results-container .outcome-text div{
+    margin:10px;
+    align-self: center;
+    /* border:1px solid white; */
+}
+
+.results-container .outcome-title {
+    font-weight: bold;
+    font-size:x-large;
+}
+
+.results-icons-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: horizontal;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    color: white;
+    /* padding:10px; */
+    /* border:1px solid white; */
+    font-weight: bold;
+    font-size:100px;
+}
+
+.scores-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: horizontal;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    color: white;
+    /* padding:10px; */
+    /* border:1px solid white; */
+    font-weight: bold;
+    gap: 70px;
+    /* font-size:px; */
+}
+
+
+
+
+
+
+
