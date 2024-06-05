@@ -1,4 +1,4 @@
-let humanScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 let choiceTranslationSymbols = ["Rock","Paper","Scissors"];
 
@@ -12,6 +12,7 @@ let decisionMatrix = [
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn')
 const scissorsBtn = document.getElementById('scissorsBtn')
+const nextRoundBtn = document.getElementById('nextRoundBtn')
 
 const outcomeSubtitle = document.querySelector('.outcome-subtitle');
 const outcomeTitle = document.querySelector('.outcome-title');
@@ -28,12 +29,13 @@ scissorsBtn.addEventListener('click',() => handleClick(2))
 
 
 function isGameOver(){
-    if(humanScore == 4 || computerScore == 4){
+    if(playerScore == 5 || computerScore == 5){
+        return true
     }
 }
 
 function resetData(){
-    humanScore = 0
+    playerScore = 0
     computerScore =0
     outcomeSubtitle.textContent = "First to 5 wins the game"
     outcomeTitle.textContent = "Choose your weapon!"
@@ -42,17 +44,19 @@ function resetData(){
     playerScoreText.textContent = "Player: 0"
     computerScoreText.textContent = "Computer: 0"
 
-
 }
 
 
 function handleClick(playerSelection){
 
     if(isGameOver()){
-       
         return
     }
     playRound(playerSelection,getComputerSelection())
+    if(isGameOver()){
+        resetData()
+        return
+    }
 }
 
 
@@ -97,12 +101,14 @@ function playRound(playerSelection,computerSelection){
         computerScore++;
         outcomeSubtitle.textContent = choiceTranslationSymbols[computerSelection] + " beats " + choiceTranslationSymbols[playerSelection]
         outcomeTitle.textContent = "Computer wins!"
+        computerScoreText.textContent = "Computer: " + computerScore 
         console.log("COMPUTER WINS");
     }
     else if (playerSelection_outcome > computerSelection_outcome){
-        humanScore++;
+        playerScore++;
         outcomeSubtitle.textContent = choiceTranslationSymbols[playerSelection] + " beats " + choiceTranslationSymbols[computerSelection]
         outcomeTitle.textContent = "You win!"
+        playerScoreText.textContent = "Player: " + playerScore
         console.log("YOU WIN");
     }
 }   
